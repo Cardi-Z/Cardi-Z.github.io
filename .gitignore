@@ -1,0 +1,6 @@
+.DS_Store
+.openai/
+WEBSITE_HANDOFF.md
+outputs/
+work/
+dist/
