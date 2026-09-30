@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Portfolio Poppins";
+  src: url("fonts/Poppins-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Portfolio HarmonyOS Sans";
+  src: url("fonts/HarmonyOS_Sans_SC_Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+html,
+body,
+body *,
+body *::before,
+body *::after,
+button,
+input,
+select,
+textarea {
+  font-family: "Portfolio Poppins", "Portfolio HarmonyOS Sans", sans-serif !important;
+  font-synthesis: none;
+}

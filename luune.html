@@ -24,6 +24,8 @@
     footer{padding:70px 0 45px;border-top:1px solid var(--line)}.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:end}.next{font:400 clamp(2rem,4vw,4.6rem)/1 Georgia,"Songti SC",serif}.fine{font-size:.72rem;color:var(--quiet);text-align:right}.reveal{opacity:0;transform:translateY(18px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}
     @media(max-width:820px){.wrap{width:min(calc(100% - 30px),var(--max))}.nav-right a:nth-child(2){display:none}.hero{grid-template-columns:1fr;grid-template-rows:auto auto 1fr auto;padding-top:105px}.hero-title{font-size:25vw}.hero-kicker{text-align:left}.hero-copy,.hero-meta{grid-column:1}.breath{width:82vw;right:-26vw;top:29vh}.section-grid{display:block}.side{margin-bottom:40px}.main h2{margin-bottom:38px}.research,.product-frame,.artifact-stack,.campaign,.result-grid,.reflection{grid-template-columns:1fr}.pivot{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}.artifact-stack .artifact:nth-child(2){margin-top:0}.strategy-map{grid-template-columns:1fr}.stage{min-height:280px}.channel{grid-template-columns:1fr}.reflection h2{position:static}.footer-grid{display:block}.fine{text-align:left;margin-top:36px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.breath{animation:none}.reveal{opacity:1;transform:none;transition:none}}
   </style>
+  <link rel="stylesheet" href="assets/site-interactions.css">
+  <link rel="stylesheet" href="assets/site-fonts.css">
 </head>
 <body>
   <header><nav class="wrap"><a href="index.html">← Celia Zhao</a><div class="nav-right"><a href="#process">过程</a><a href="#gtm">GTM</a><a href="#outcome">结果</a></div></nav></header>
@@ -45,6 +47,6 @@
     <section><div class="wrap reflection"><div><div class="eyebrow">07 · Reflection</div><h2>这次经历改变了我理解产品的方式。</h2></div><div class="reflection-list reveal"><div class="reflection-item"><div><h3>数据需要给用户判断，而不只是指标</h3><p>睡眠信息越专业，越需要清楚说明它对当下状态意味着什么。</p></div></div><div class="reflection-item"><div><h3>GTM 应从产品的使用方式生长出来</h3><p>床头产品的价值需要在真实环境中被感知，因此酒店、疗愈空间和设计零售比单纯曝光更接近有效验证。</p></div></div><div class="reflection-item"><div><h3>品牌表达也属于产品体验</h3><p>从灯光、声音到内容和空间，所有接触点都需要传达一致的低干扰感。</p></div></div></div></div></section>
   </main>
   <footer><div class="wrap footer-grid"><a class="next" href="index.html">Back to selected work ↗</a><div class="fine">Luune case study<br>Research · Product · GTM</div></div></footer>
-  <script>const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));</script>
+  <script src="assets/site-interactions.js" defer></script>
 </body>
 </html>
