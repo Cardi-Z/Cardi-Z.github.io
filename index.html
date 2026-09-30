@@ -23,7 +23,7 @@
     .hero-contact{justify-self:center}.hero-location{justify-self:end;text-align:right}
     .water-composition{align-self:end;position:relative;margin:0 calc(50% - 50vw);padding-top:clamp(4.8rem,9vw,9.2rem)}
     .water-hero{position:relative;height:min(40vh,390px);min-height:270px;overflow:hidden;background:#c9c8c0}
-    .water-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;filter:grayscale(1) contrast(1.18) brightness(.9)}
+    .water-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;filter:grayscale(1) contrast(1.18) brightness(.9);pointer-events:none}
     .water-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(243,240,230,.18),rgba(243,240,230,0) 30%,rgba(0,0,0,.08));mix-blend-mode:multiply;pointer-events:none}
     .hero-marquee{position:absolute;left:0;right:0;top:0;display:flex;white-space:nowrap;color:#050505;font-size:clamp(5.6rem,14vw,15rem);font-weight:500;line-height:.8;letter-spacing:-.075em;text-transform:none;z-index:2;mix-blend-mode:multiply;pointer-events:none}
     .hero-marquee-track{display:flex;gap:.18em;min-width:max-content;animation:marquee-left 32s linear infinite}.hero-marquee span{padding-right:.18em}
@@ -41,7 +41,7 @@
     .work-stage{position:sticky;top:calc(50vh - 135px);width:clamp(220px,25vw,360px);height:clamp(205px,30vh,270px);margin-left:38.5%;display:grid;place-items:center;overflow:hidden;background:var(--paper);border:1px solid var(--ink)}
     .work-visual{position:absolute;inset:12px;display:grid;place-items:center;background:#ded9cb;overflow:hidden;clip-path:inset(100% 0 0 0);opacity:1;transform:none;transition:none;z-index:0}
     .work-visual:first-child{clip-path:inset(0 0 0 0)}.work-visual.is-active{opacity:1}.work-visual img{width:100%;height:100%;object-fit:cover;filter:grayscale(.08) contrast(1.02)}.work-visual img.triad-shot{object-position:50% 8%}
-    .work-visual::after{content:attr(data-label);position:absolute;left:18px;bottom:14px;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(34,35,30,.66)}
+    .work-visual::after{content:none}
     .work-visual-data{width:100%;height:100%;padding:9%;background:var(--olive);color:var(--paper);display:grid;grid-template-columns:1fr 1fr;align-content:space-between;gap:22px}.work-visual-data strong{font-family:Georgia,serif;font-weight:400;font-size:clamp(2.2rem,4vw,4rem);line-height:.8}.work-visual-data span{display:block;margin-top:10px;font-size:.72rem}.work-visual-data .wide{grid-column:1/3;border-top:1px solid rgba(255,255,255,.4);padding-top:14px;font-size:.72rem}
     .image-frame{background:#e8e5da;padding:18px}.image-frame img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center}
     .data-composition{min-height:520px;background:var(--olive);color:var(--paper);padding:9%;display:grid;grid-template-columns:1fr 1fr;align-content:space-between;gap:45px}
@@ -72,7 +72,7 @@
       <div class="water-composition">
         <div class="hero-marquee" aria-hidden="true"><div class="hero-marquee-track"><span>Hi, I'm Celia.</span><span>Hi, I'm Celia.</span><span>Hi, I'm Celia.</span><span>Hi, I'm Celia.</span></div></div>
         <div class="water-hero" aria-label="black and white water ripple">
-          <video src="assets/water-test-b.mp4" autoplay muted loop playsinline preload="auto"></video>
+          <video src="assets/water-hero-silent.mp4" autoplay muted loop playsinline preload="auto" tabindex="-1" aria-hidden="true"></video>
         </div>
       </div>
     </div>
@@ -89,11 +89,11 @@
           <article class="work-item" data-work-index="4"><span class="number">05</span><h3><a href="architecture-portfolio.html"><span class="title-cn">建筑作品集</span><span class="title-en">Architecture Portfolio</span></a></h3><p>建筑训练给我的不只是空间表达：它要求我同时考虑人的行为、不同角色的需求，以及方案落地时的成本与约束。</p><div class="meta"><span>Architecture Portfolio</span><span>17 页 PDF</span></div></article>
         </div>
         <div class="work-stage-wrap" aria-hidden="true"><div class="work-stage">
-          <div class="work-visual is-active" data-work-visual="0" data-label="Luune / campaign film"><img src="assets/luune/luune-kickstarter-poster.jpg" alt=""></div>
-          <div class="work-visual" data-work-visual="1" data-label="Social media / selected content"><img src="assets/social/social-directory-cover.jpg" alt=""></div>
-          <div class="work-visual" data-work-visual="2" data-label="TriadNights / game system"><img src="assets/triad/triad-directory-cover.png" alt=""></div>
-          <div class="work-visual" data-work-visual="3" data-label="Exoskeleton / prototype"><img src="assets/exoskeleton/exo-directory-cover.png" alt=""></div>
-          <div class="work-visual" data-work-visual="4" data-label="Architecture portfolio"><img src="assets/portfolio-cover-wide.png" alt=""></div>
+          <div class="work-visual is-active" data-work-visual="0"><img src="assets/luune/luune-kickstarter-poster.jpg" alt=""></div>
+          <div class="work-visual" data-work-visual="1"><img src="assets/social/social-directory-cover.jpg" alt=""></div>
+          <div class="work-visual" data-work-visual="2"><img src="assets/triad/triad-directory-cover.png" alt=""></div>
+          <div class="work-visual" data-work-visual="3"><img src="assets/exoskeleton/exo-directory-cover.png" alt=""></div>
+          <div class="work-visual" data-work-visual="4"><img src="assets/portfolio-cover-wide.png" alt=""></div>
         </div></div>
       </div>
     </div></section>

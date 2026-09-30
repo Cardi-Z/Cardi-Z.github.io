@@ -56,6 +56,23 @@
     updateActive();
   }
 
+  const heroVideo = document.querySelector(".water-hero video");
+  if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.controls = false;
+    heroVideo.disablePictureInPicture = true;
+    const playHeroVideo = () => {
+      const playAttempt = heroVideo.play();
+      playAttempt?.catch?.(() => {});
+    };
+    if (heroVideo.readyState >= 2) playHeroVideo();
+    else heroVideo.addEventListener("canplay", playHeroVideo, { once: true });
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden && heroVideo.paused) playHeroVideo();
+    });
+  }
+
   const workItems = [...document.querySelectorAll(".work-item[data-work-index]")];
   const workVisuals = [...document.querySelectorAll(".work-visual[data-work-visual]")];
   if (workItems.length && workVisuals.length) {
@@ -74,10 +91,17 @@
       if (!stage) return;
       const visualRect = workVisuals[0].getBoundingClientRect();
       const visualHeight = visualRect.height;
+      const marker = window.innerHeight * 0.5;
+      const active = workItems.reduce((closest, item) => {
+        const rect = item.getBoundingClientRect();
+        const distance = Math.abs(rect.top + rect.height / 2 - marker);
+        return distance < closest.distance ? { item, distance } : closest;
+      }, { item: workItems[0], distance: Infinity }).item;
+      const activeIndex = Number(active.dataset.workIndex);
 
       workVisuals.forEach((visual, index) => {
         visual.style.zIndex = String(index + 1);
-        if (index === 0) {
+        if (index <= activeIndex) {
           visual.style.clipPath = "inset(0 0 0 0)";
           return;
         }
@@ -86,12 +110,6 @@
         visual.style.clipPath = `inset(${clippedTop}px 0 0 0)`;
       });
 
-      const marker = window.innerHeight * 0.5;
-      const active = workItems.reduce((closest, item) => {
-        const rect = item.getBoundingClientRect();
-        const distance = Math.abs(rect.top + rect.height / 2 - marker);
-        return distance < closest.distance ? { item, distance } : closest;
-      }, { item: workItems[0], distance: Infinity }).item;
       setWorkActive(active.dataset.workIndex);
       workTicking = false;
     };
